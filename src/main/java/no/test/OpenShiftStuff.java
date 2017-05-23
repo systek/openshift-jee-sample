@@ -29,7 +29,7 @@ public class OpenShiftStuff {
     }
 
     public List<String> getRunningPods() {
-        IList build = client.get("builds", namespace);
+        IList build = client.get("builds/logs", namespace);
         List<String> builds = new ArrayList<String>();
         for(IResource r : build.getItems()) {
             builds.add(r.getName());
