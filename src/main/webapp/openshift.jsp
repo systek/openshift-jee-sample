@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>OpenShift test</title>
+	<title>OpenShift test2</title>
 	<%@ page import="no.test.OpenShiftStuff" %>
 	<%@ page import="java.util.*" %>
 </head>
