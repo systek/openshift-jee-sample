@@ -18,11 +18,9 @@ public class OpenShiftStuff {
     private final String namespace;
 
     public OpenShiftStuff() throws IOException {
-        String host = System.getenv("KUBERNETES_SERVICE_HOST");
-        String port = System.getenv("KUBERNETES_SERVICE_PORT");
         String token = new String(Files.readAllBytes(Paths.get("/run/secrets/kubernetes.io/serviceaccount/token")), "UTF-8");
         namespace = new String(Files.readAllBytes(Paths.get("/run/secrets/kubernetes.io/serviceaccount/namespace")), "UTF-8");
-        client = new ClientBuilder("https://" + host + ":" + port).usingToken(token)
+        client = new ClientBuilder(getKubernetesServiceUrl).usingToken(token)
                 .sslCertCallbackWithDefaultHostnameVerifier(false)
                 .sslCertificateCallback(new NoopSSLCertificateCallback())
                 .build();
@@ -35,5 +33,11 @@ public class OpenShiftStuff {
             builds.add(r.getName());
         }
         return builds;
+    }
+
+    public String getKubernetesServiceUrl() {
+        String host = System.getenv("KUBERNETES_SERVICE_HOST");
+        String port = System.getenv("KUBERNETES_SERVICE_PORT");
+        return "https://" + host + ":" + port;
     }
 }

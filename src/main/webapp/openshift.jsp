@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Builds</h1>
-
+<span><%=new OpenShiftStuff().getKubernetesServiceUrl()%></span>
 <ul>
 <%
 List<String> builds = new OpenShiftStuff().getRunningPods();
