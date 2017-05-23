@@ -23,9 +23,9 @@ public class OpenShiftStuff {
         String token = new String(Files.readAllBytes(Paths.get("/run/secrets/kubernetes.io/serviceaccount/token")), "UTF-8");
         namespace = new String(Files.readAllBytes(Paths.get("/run/secrets/kubernetes.io/serviceaccount/namespace")), "UTF-8");
         client = new ClientBuilder("https://" + host + ":" + port).usingToken(token)
-                .sslCertCallbackWithDefaultHostnameVerifier(false)
-                .sslCertificateCallback(new NoopSSLCertificateCallback())
-                .build();
+            .sslCertCallbackWithDefaultHostnameVerifier(false)
+            .sslCertificateCallback(new NoopSSLCertificateCallback())
+            .build();
     }
 
     public List<String> getRunningPods() {
@@ -40,4 +40,5 @@ public class OpenShiftStuff {
 
     public String helloVoid() {
         return "hello bello yellow smello";
+    }
 }
