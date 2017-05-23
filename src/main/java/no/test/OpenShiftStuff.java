@@ -31,9 +31,13 @@ public class OpenShiftStuff {
     public List<String> getRunningPods() {
         IList build = client.get("builds", namespace);
         List<String> builds = new ArrayList<String>();
+        int counter = 0;
         for(IResource r : build.getItems()) {
-            builds.add(r.getName());
+            counter++;
+            builds.add("Build #" + counter + r.getName());
         }
         return builds;
     }
+
+    
 }
