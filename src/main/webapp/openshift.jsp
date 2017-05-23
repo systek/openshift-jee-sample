@@ -7,8 +7,9 @@
 <body>
 <h1>Builds</h1>
 
-SMUILD
- 
+
+<%=new OpenShiftStuff().helloVoid() %>
+
 <ul>
 <%
 List<String> builds = new OpenShiftStuff().getRunningPods();
