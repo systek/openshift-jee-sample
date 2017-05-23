@@ -31,11 +31,11 @@ for (String build : builds) {
 
 <ul>
 <%
-List<String> builds = new OpenShiftStuff().getPods();
-for (String build : builds) {
+List<String> pods = new OpenShiftStuff().getPods();
+for (String pod : pods) {
 %>
 <li>
-<%=build%>
+<%=pod%>
 </li>
 <%
 }
