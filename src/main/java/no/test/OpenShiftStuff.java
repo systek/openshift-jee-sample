@@ -39,11 +39,11 @@ public class OpenShiftStuff {
         return builds;
     }
 
-    public List<IResource> getPods() {
+    public List<String> getPods() {
         IList pod = client.get("pod", namespace);
-        List <IResource> pods = new ArrayList<IResource>();
+        List <String> pods = new ArrayList<String>();
         for(IResource r: pod.getItems()) {
-            pods.add(r);
+            pods.add(r.toString());
         }
         return pods;
     }
