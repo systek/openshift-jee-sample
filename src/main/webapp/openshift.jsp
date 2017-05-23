@@ -5,7 +5,7 @@
 	<%@ page import="java.util.*" %>
 </head>
 <body>
-<h1>Builds</h1>
+<h1>Sebs Builds</h1>
 
 <ul>
 <%
