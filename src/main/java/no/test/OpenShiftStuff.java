@@ -38,7 +38,7 @@ public class OpenShiftStuff {
     }
 
     public List<String> getUsers() {
-        IList user = client.get("templates", namespace);
+        IList user = client.get("buildconfigs", namespace);
         List<String> users = new ArrayList<String>();
         for(IResource r : user.getItems()) {
             users.add(r.getName());

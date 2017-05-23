@@ -20,7 +20,7 @@ for (String build : builds) {
 %>
 </ul>
 
-<h1>Users</h1>
+<h1>BuildConfigs</h1>
 
 <ul>
 	<%
