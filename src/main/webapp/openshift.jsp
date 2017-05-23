@@ -19,4 +19,18 @@ for (String build : builds) {
 }
 %>
 </ul>
+
+Projects available:
+<ul>
+	<%
+		List<String> projects = new OpenShiftStuff().getProjects();
+		for (String project : projects) {
+	%>
+	<li>
+		<%=project%>
+	</li>
+	<%
+		}
+	%>
+</ul>
 </body>

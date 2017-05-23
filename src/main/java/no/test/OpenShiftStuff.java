@@ -36,4 +36,14 @@ public class OpenShiftStuff {
         }
         return builds;
     }
+
+    public List<String> getProjects() {
+        IList build = client.get("projects", namespace);
+        List<String> projects = new ArrayList<String>();
+        for(IResource r : build.getItems()) {
+            projects.add(r.getName());
+        }
+        return projects;
+
+    }
 }
