@@ -15,6 +15,8 @@ import java.util.List;
 public class OpenShiftStuff {
 
     private final IClient client;
+
+
     private final String namespace;
 
     public OpenShiftStuff() throws IOException {
@@ -37,8 +39,19 @@ public class OpenShiftStuff {
         return builds;
     }
 
-
+    public List<IResource> getPods() {
+        IList pod = client.get("pod", namespace);
+        List <IResource> pods = new ArrayList<IResource>();
+        for(IResource r: pod.getItems()) {
+            pods.add(r);
+        }
+        return pods;
+    }
     public String helloVoid() {
         return "hello bello yellow smello";
+    }
+
+    public String getNamespace() {
+        return namespace;
     }
 }

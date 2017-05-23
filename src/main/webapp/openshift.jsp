@@ -9,6 +9,7 @@
 
 
 <%=new OpenShiftStuff().helloVoid() %>
+<%=new OpenShiftStuff().getNamespace() %>
 
 <ul>
 <%
@@ -22,4 +23,24 @@ for (String build : builds) {
 }
 %>
 </ul>
+
+
+<hr />
+
+<ul>
+
+<ul>
+<%
+List<String> builds = new OpenShiftStuff().getPods();
+for (String build : builds) {
+%>
+<li>
+<%=build%>
+</li>
+<%
+}
+%>
+</ul>
+
+
 </body>
