@@ -1,11 +1,11 @@
 <html>
 <head>
-	<title>OpenShift test</title>
+	<title>KKHO test</title>
 	<%@ page import="no.test.OpenShiftStuff" %>
 	<%@ page import="java.util.*" %>
 </head>
 <body>
-<h1>Builds</h1>
+<h1>Builds on kkho world</h1>
 
 <ul>
 <%
