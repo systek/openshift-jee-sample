@@ -8,7 +8,7 @@
 <h1>Builds</h1>
 
 
-<%=helloVoid()%>
+<%=new OpenShiftStuff().helloVoid() %>
 
 <ul>
 <%
