@@ -36,4 +36,8 @@ public class OpenShiftStuff {
         }
         return builds;
     }
+
+
+    public String helloVoid() {
+        return "hello bello yellow smello";
 }
